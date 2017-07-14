@@ -35,13 +35,13 @@ public class Main {
         Spark.get("/", (request, response) -> {
 
             StringWriter writer = new StringWriter();
-            response.redirect("templates/Pucmm.ftl");
+            response.redirect("/Pucmm");
             return writer;
         });
 
         Spark.get("/Pucmm", (request, response) ->
         {
-            Template resultTemplate = configuration.getTemplate("/Pucmm.ftl");
+            Template resultTemplate = configuration.getTemplate("Pucmm.ftl");
             StringWriter writer = new StringWriter();
 
             Map<String, Object> attributes = new HashMap<>();
