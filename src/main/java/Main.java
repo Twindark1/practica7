@@ -28,7 +28,7 @@ public class Main {
         port(getHerokuAssignedPort());
 
         final Configuration configuration = new Configuration(new Version(2, 3, 0));
-        configuration.setClassForTemplateLoading(Main.class, "/");
+        configuration.setClassForTemplateLoading(Main.class, "/templates");
 
         ArrayList<Student> StudentList = new ArrayList<Student>();
 
@@ -41,7 +41,7 @@ public class Main {
 
         Spark.get("/Pucmm", (request, response) ->
         {
-            Template resultTemplate = configuration.getTemplate("templates/Pucmm.ftl");
+            Template resultTemplate = configuration.getTemplate("/Pucmm.ftl");
             StringWriter writer = new StringWriter();
 
             Map<String, Object> attributes = new HashMap<>();
