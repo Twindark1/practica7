@@ -1,0 +1,35 @@
+group 'pucmm.edu.do'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+archivesBaseName = "Practica2"
+version = '1.0'
+applicationName = "Practica2"
+mainClassName = "Main"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.sparkjava:spark-core:2.5'
+    compile 'com.sparkjava:spark-template-freemarker:2.3'
+    compile 'org.freemarker:freemarker:2.3.23'
+    compile 'com.sparkjava:spark-debug-tools:0.5'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+
+    runtime 'org.slf4j:slf4j-simple:1.7.21'
+
+
+
+}
+
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
+
