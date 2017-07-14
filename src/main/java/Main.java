@@ -53,7 +53,7 @@ public class Main {
 
         Spark.get("/AgregarEstudiante", (request, response) ->
         {
-            Template resultTemplate = configuration.getTemplate("templates/AgregarEstudiante.ftl");
+            Template resultTemplate = configuration.getTemplate("AgregarEstudiante.ftl");
             StringWriter writer = new StringWriter();
 
             Map<String, Object> attributes = new HashMap<>();
@@ -71,7 +71,7 @@ public class Main {
         });
 
         Spark.get("/ModificarEstudiante/:id", (request, response) -> {
-            Template resultTemplate = configuration.getTemplate("templates/ModificarEstudiante.ftl");
+            Template resultTemplate = configuration.getTemplate("ModificarEstudiante.ftl");
             StringWriter writer = new StringWriter();
 
             int id = Integer.parseInt(request.params("id"));
